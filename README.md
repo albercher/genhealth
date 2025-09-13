@@ -67,13 +67,23 @@ This is a full-stack application designed for a software engineering assessment.
 ## Logging
 All API actions are logged in the database with user, timestamp, and action details.
 
-## Deployment
-- The solution can be deployed to any public cloud or server supporting Docker.
-- Update environment variables and database connection as needed for production.
+## Limitations and Future Improvements
 
-## Assessment Notes
-- The project demonstrates RESTful API design, database integration, file handling, logging, and deployment best practices.
-- The frontend is optional and can be extended for a complete user experience.
+While the core functionality of this project is implemented, there are several areas where further work is needed to reach production-grade quality:
+
+- **Validation:** There is currently no validation on the date field or other user inputs. Robust validation is essential to ensure data integrity and prevent errors.
+- **Authentication:** The application does not include a sign-in page. Implementing authentication would allow tracking changes made to Protected Health Information (PHI) and associating actions with actual users, rather than an "anonymous user." This is critical for auditability and compliance.
+- **Duplicate Prevention:** There are no constraints to prevent duplicate PDF submissions. Adding logic to detect and prevent duplicates, or allowing multiple PDFs to be uploaded at once, would improve usability and data quality.
+- **Security:** Security is a top concern when handling healthcare data. Additional measures such as encryption, secure storage, and proper access controls should be implemented to protect sensitive information.
+- **Testing:** Automated testing is currently missing from the project. Implementing comprehensive unit and integration tests for both backend and frontend is essential to ensure reliability, prevent regressions, and provide confidence when making changes.
+
+If more time were available, my focus would be on:
+- Adding comprehensive validation for all user inputs
+- Implementing user authentication and authorization
+- Enforcing constraints to prevent duplicate or erroneous submissions
+- Enhancing security throughout the stack, compliant with all HIPAA standards.
+
+These improvements are essential for a production-grade release, especially in a healthcare context.
 
 ## License
 MIT
