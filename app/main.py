@@ -12,10 +12,21 @@ import models
 import database
 
 # Create the FastAPI application instance.
+
 app = FastAPI(
     title="Order Management API",
     description="An API to manage orders, extract patient data from PDFs, and log user activity.",
     version="1.0.0"
+)
+
+# CORS middleware for frontend-backend communication
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For development, allow all. For production, specify allowed origins.
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Helper function to create a log entry.

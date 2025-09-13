@@ -9,4 +9,5 @@ COPY . .
 
 EXPOSE 3000
 
+# Start the app with npm start for React
 CMD ["npm", "start"]
